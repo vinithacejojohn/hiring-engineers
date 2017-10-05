@@ -6,7 +6,7 @@
    
     * What is an agent
     * Tagging in agent config 
-    * Mysql Integration Example
+    * Mysql Integration 
     * Agent Check
 * Level 2 - Visualizing your Data
     * Clone database ingration dashboard
@@ -85,6 +85,14 @@ sudo /etc/init.d/datadog-agent info -v
   ###### This is my Screenshot
  
 ![Tagging Screenshot](/images/Tag.png)
+
+
+### Mysql Integration
+
+* The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything for this. After this create user for datadog agent and give permissions. I have followed the instruction provided in this doc https://docs.datadoghq.com/integrations/mysql/
+
+### Agent Check
+* Agent check is a python plugin to the datadog agent. 
 
 
 
