@@ -83,8 +83,8 @@ sudo /etc/init.d/datadog-agent info -v
   * Tags are actually a key: Value pair.Open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
   ###### This is my Screenshot
-  
-![alt tag](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/Tag.png)
+ 
+![Tagging Screenshot](/images/Tag.png)
 
 
 
