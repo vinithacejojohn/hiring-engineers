@@ -119,8 +119,8 @@ Here, I have written an agent check for the matric ```test.support.random``` and
 * Monitor alert obtained via mail 
 ![Tagging Screenshot](/images/alert.png)
 
-
 * Bonus: Downtime for monitor alert set up
+
 ![Tagging Screenshot](/images/downtime.png)
 
 * Mail notification after Downtime has started
