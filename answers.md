@@ -1,15 +1,92 @@
-# Datadog
+# DataDog Challenge
 * Introduction
-* What is an agent
-* Installation of an agent
-* Start/Stop/Restart an agent
-* Status and Information of an agent
-* Configuration Files
-* Tagging 
-* Mysql Integration Example
-* Agent Check
-* Creating Dashboards
-* Create monitoring and alert 
-* 
+* Questions
+* Level 0 (optional) - Setup an Ubuntu VM
+* Level 1 - Collecting your Data
+   
+    * What is an agent
+    * Tagging in agent config 
+    * Mysql Integration Example
+    * Agent Check
+* Level 2 - Visualizing your Data
+    * Clone database ingration dashboard
+    
+* Level 3 - Alerting on your Data
+    * Create monitoring and alert 
+    * Scheduling downtime for monitor 
 
 ## Introduction
+   *  Datadog is a monitoring and analysing tool that can be used for collectig and gathering data from cloud-scale applications,servers, databases, tools, and services. Datadog helps to render view of an entire stack of our infrastucture and datadog is a SaaS-based data analytics platform.
+   
+## Questions
+* This documentation contains the solutions to the DataDog challenge provided https://github.com/DataDog/hiring-engineers/tree/support-engineer#the-challenge
+
+# Level 0 (optional) - Setup an Ubuntu VM
+   * For this I have launched one ubuntu VM in AWS. 
+   
+### Bonus question: What is an agent
+  * Inorder to use datadog, we have to install an agent in out host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
+  
+ * Main parts of the agents are the collector, dogstatsd, and the forwarder.
+
+* ```` collector```` runs checks on the current machine for whatever integrations you have and it will capture system metrics like memory and CPU.```` Dogstatsd````is a statsd backend server you can send custom metrics to from an application.```` forwarder````retrieves data from both dogstatsd and the collector and then queues it up to be sent to Datadog.
+  
+     
+###### Installation of an agent
+   * Firts of all we have to take an account with the datadog. You will get an API key with that you are able to install the agent.
+###### Basic commands for agent usage
+  1. Starting an agent
+````sh
+sudo /etc/init.d/datadog-agent start
+````
+2. Stopping an agent
+````sh
+sudo /etc/init.d/datadog-agent stot
+````
+3. Restarting an agent
+````sh
+sudo /etc/init.d/datadog-agent restart
+````
+###### Status and Information
+
+1.To check if the Agent is running: (since 3.8.0)
+````sh
+sudo /etc/init.d/datadog-agent status
+````
+2.To receive information about the Agent’s state:
+```sh
+sudo /etc/init.d/datadog-agent info
+```
+3.Tracebacks for errors can be retrieved by setting the -v flag: (since 3.8.0)
+````sh
+sudo /etc/init.d/datadog-agent info -v
+````
+
+###### Configuration Files
+
+* All the configuration file for the agent is loacted at ````sh /etc/dd-agent/datadog.conf ```` and Configuration files for integrations are located in  `sh /etc/dd-agent/conf.d/`
+
+###### Troubleshooting
+
+* Try running the info command to see the state of the Agent.Logs for the subsystems are in the following files:
+
+```sh 
+/var/log/datadog/supervisord.log (since 3.8.0)
+/var/log/datadog/collector.log
+/var/log/datadog/dogstatsd.log
+/var/log/datadog/forwarder.log
+```
+
+### Tagging 
+
+  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tagg either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
+  Open the datadog.conf file ``sh  sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``sh tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
+  
+  ###### This is my Screenshot
+  
+
+
+
+
+
+  
