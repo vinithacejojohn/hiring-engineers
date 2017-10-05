@@ -35,29 +35,29 @@
 ###### Installation of an agent
    * Firts of all we have to take an account with the datadog. You will get an API key with that you are able to install the agent.
 ###### Basic commands for agent usage
-  1. Starting an agent
+  Starting an agent
 ````sh
 sudo /etc/init.d/datadog-agent start
 ````
-2. Stopping an agent
+Stopping an agent
 ````sh
 sudo /etc/init.d/datadog-agent stot
 ````
-3. Restarting an agent
+Restarting an agent
 ````sh
 sudo /etc/init.d/datadog-agent restart
 ````
 ###### Status and Information
 
-1.To check if the Agent is running: (since 3.8.0)
+To check if the Agent is running: (since 3.8.0)
 ````sh
 sudo /etc/init.d/datadog-agent status
 ````
-2.To receive information about the Agent’s state:
+To receive information about the Agent’s state:
 ```sh
 sudo /etc/init.d/datadog-agent info
 ```
-3.Tracebacks for errors can be retrieved by setting the -v flag: (since 3.8.0)
+Tracebacks for errors can be retrieved by setting the -v flag: (since 3.8.0)
 ````sh
 sudo /etc/init.d/datadog-agent info -v
 ````
@@ -80,7 +80,7 @@ sudo /etc/init.d/datadog-agent info -v
 ### Tagging 
 
   * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
-  Open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
+  * Tags are actually a key: Value pair.Open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
   ###### This is my Screenshot
   
