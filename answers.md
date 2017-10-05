@@ -112,12 +112,17 @@ Here, I have written an agent check for the matric ```test.support.random``` and
 
 * Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes
 ![Tagging Screenshot](/images/alertcondition.png)
+
 * Bonus points: Multi-alert monitor
 ![Tagging Screenshot](/images/multialert.png)
 
 * Monitor alert obtained via mail 
 ![Tagging Screenshot](/images/alert.png)
 
-* Bonus: Downtime for monitor alert
+
+* Bonus: Downtime for monitor alert set up
 ![Tagging Screenshot](/images/downtime.png)
+
+* Mail notification after Downtime has started
+![Tagging Screenshot](/images/downtimemail.png)
 
