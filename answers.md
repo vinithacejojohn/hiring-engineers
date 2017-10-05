@@ -1,33 +1,29 @@
 # DataDog Challenge
+### Contents
 * Introduction
 * Questions
-* Level 0 (optional) - Setup an Ubuntu VM
-* Level 1 - Collecting your Data
-   
+* **Level 0 (optional) - Setup an Ubuntu VM**
+* **Level 1 - Collecting your Data**  
     * What is an agent
     * Tagging in agent config 
     * Mysql Integration 
     * Agent Check
-* Level 2 - Visualizing your Data
-    * Clone database ingration dashboard
-    * Difference between a timeboard and a screenboard?
-    * snapshot of your test.support.random graph that shows it going above 0.90. 
+* **Level 2 - Visualizing your Data** 
     
-* Level 3 - Alerting on your Data
-    * Create monitor and alert 
-    * Scheduling downtime for monitor 
+* **Level 3 - Alerting on your Data**
+
 
 ## Introduction
-   *  Datadog is a monitoring and analysing tool that can be used for collectig and gathering data from cloud-scale applications,servers, databases, tools, and services. Datadog helps to render view of an entire stack of our infrastucture and datadog is a SaaS-based data analytics platform.
+Datadog is a monitoring and analysing tool that can be used for collectig and gathering data from cloud-scale applications,servers, databases, tools, and services. Datadog helps to render view of an entire stack of our infrastucture and datadog is a SaaS-based data analytics platform.
    
 ## Questions
-* This documentation contains the solutions to the DataDog challenge provided https://github.com/DataDog/hiring-engineers/tree/support-engineer#the-challenge
+* This documentation contains the solutions to the DataDog challenge questions for [Support Engineer](https://github.com/DataDog/hiring-engineers/tree/support-engineer#the-challenge)
 
 # Level 0 (optional) - Setup an Ubuntu VM
    * For this I have launched one ubuntu VM in AWS. 
    
 ### Bonus question: What is an agent
-  * Inorder to use datadog, we have to install an agent in out host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
+  * In order to use datadog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
   
  * Main parts of the agents are the collector, dogstatsd, and the forwarder.
 
@@ -35,7 +31,10 @@
   
      
 ###### Installation of an agent
-   * Firts of all we have to take an account with the datadog. You will get an API key with that you are able to install the agent.
+   * First of all we have to take an account with the datadog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( YOUR_API_KEY will be replaced by our secret API Key )
+   ```
+   DD_API_KEY=[YOUR_API_KEY] bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
+   ```
 ###### Basic commands for agent usage
   Starting an agent
 ````sh
@@ -81,7 +80,7 @@ sudo /etc/init.d/datadog-agent info -v
 
 ### Tagging 
 
-  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
+  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on [DataDog Tags](https://docs.datadoghq.com/guides/tagging/) for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
   * Tags are actually a key: Value pair. In order to tag open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
   ###### This is my Screenshot after tagging 
@@ -92,10 +91,10 @@ sudo /etc/init.d/datadog-agent info -v
 
 ### Mysql Integration
 
-* The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything extra for this. After installing the Mysql create a user for datadog agent and give permissions. I have followed the instruction provided in this doc https://docs.datadoghq.com/integrations/mysql/ . After completing all the steps database integration will reporte the matrics to datadog.
+* The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything extra for this. After installing the Mysql create a user for datadog agent and give permissions. I have followed the instruction provided in the doc [DataDog Mysql Integration](https://docs.datadoghq.com/integrations/mysql/) . After completing all the steps database integration will reporte the matrics to datadog.
 
 ### Agent Check
-* Agent check is a python plugin to the datadog agent. Agent Checks are a great way to collect metrics from custom applications or unique systems. For more information regarding the aget check visit https://docs.datadoghq.com/guides/agent_checks/#overview
+* Agent check is a python plugin to the datadog agent. Agent Checks are a great way to collect metrics from custom applications or unique systems. For more information regarding the aget check visit [DataDog Agent Check](https://docs.datadoghq.com/guides/agent_checks/#overview)
 
 * For Each check we will have to write two files, one configuration file (yaml) and a check module file (.py). Configuration file should  placed in the conf.d directory and the module file in check.d directory. Configuration is written using YAML and the file name should match the name of the check module.
 
