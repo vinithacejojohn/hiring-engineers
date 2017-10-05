@@ -92,9 +92,12 @@ sudo /etc/init.d/datadog-agent info -v
 * The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything for this. After this create user for datadog agent and give permissions. I have followed the instruction provided in this doc https://docs.datadoghq.com/integrations/mysql/
 
 ### Agent Check
-* Agent check is a python plugin to the datadog agent. 
+* Agent check is a python plugin to the datadog agent. Agent Checks are a great way to collect metrics from custom applications or unique systems. For more information regarding the aget check visit https://docs.datadoghq.com/guides/agent_checks/#overview
 
+* For Each check we will have to write two files, one configuration file (yaml) and a check module file (.py). Configuration file should  placed in the conf.d directory and the module file in check.d directory. Configuration is written using YAML and the file name should match the name of the check module.
 
+Here, I have written an agent check for the matric ```test.support.random``` and which samples a random value. 
+# Level 2 - Visualizing your Data
 
+* I have created one dashboard by cloning the Mysql database and added the ``test.suppport.random`` matric along with some othrer mysql matrics.
 
-  
