@@ -100,11 +100,38 @@ sudo /etc/init.d/datadog-agent info -v
 * For Each check we will have to write two files, one configuration file (yaml) and a check module file (.py). Configuration file should  placed in the conf.d directory and the module file in check.d directory. Configuration is written using YAML and the file name should match the name of the check module.
 
 Here, I have written an agent check for the matric ```test.support.random``` and which samples a random value. 
+
+- **/etc/dd-agent/checks.d/test.py**
+    ```
+    from checks import AgentCheck
+    import random
+
+       class TestCheck(AgentCheck):
+          def check(self, instance):
+            random_value=random.random()
+            self.gauge('test.support.random', random_value)
+
+    ```
+
+  - **/etc/dd-agent/conf.d/test.yaml**
+    ```
+    init_config:
+
+    instances:
+      [{}]
+    ```
+
+
+
 # Level 2 - Visualizing your Data
 
 * I have created one dashboard by cloning the Mysql database and added the ``test.suppport.random`` matric along with some othrer mysql matrics.
  ![Tagging Screenshot](/images/dashboard.png)
  * Difference between a timeboard and a screenboard?
+   * There are two type of dashboards in DataDog, Timeboard and Screenboard.
+    * Timeboard : All graphs are scoped at the same time and graphs always be in the grid-like fashion. We are able to share the graphs individualy and its better for troubleshooting and correlation.
+    * Screenboard : They are created with drag-and-drop widgets, which can each have a different time frame.These are flexible, far more customizable and are great for getting a high-level look into a system. ScreenBoards can be shared as a whole live and as a read-only entity, whereas TimeBoards cannot.
+
  * Snapshot of ```test.support.random``` matric graph and that shows it going above 0.90
  ![Tagging Screenshot](/images/matricvalue_0.94.png)
 
