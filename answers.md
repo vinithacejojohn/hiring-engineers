@@ -10,9 +10,11 @@
     * Agent Check
 * Level 2 - Visualizing your Data
     * Clone database ingration dashboard
+    * Difference between a timeboard and a screenboard?
+    * snapshot of your test.support.random graph that shows it going above 0.90. 
     
 * Level 3 - Alerting on your Data
-    * Create monitoring and alert 
+    * Create monitor and alert 
     * Scheduling downtime for monitor 
 
 ## Introduction
@@ -80,16 +82,17 @@ sudo /etc/init.d/datadog-agent info -v
 ### Tagging 
 
   * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
-  * Tags are actually a key: Value pair.Open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
+  * Tags are actually a key: Value pair. In order to tag open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
-  ###### This is my Screenshot
+  ###### This is my Screenshot after tagging 
  
+
 ![Tagging Screenshot](/images/Tag.png)
 
 
 ### Mysql Integration
 
-* The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything for this. After this create user for datadog agent and give permissions. I have followed the instruction provided in this doc https://docs.datadoghq.com/integrations/mysql/
+* The Datadog Agent can collect many metrics from MySQL databases. The MySQL check is included in the Datadog Agent package, so simply install the Agent on your MySQL servers, we dont need to install anything extra for this. After installing the Mysql create a user for datadog agent and give permissions. I have followed the instruction provided in this doc https://docs.datadoghq.com/integrations/mysql/ . After completing all the steps database integration will reporte the matrics to datadog.
 
 ### Agent Check
 * Agent check is a python plugin to the datadog agent. Agent Checks are a great way to collect metrics from custom applications or unique systems. For more information regarding the aget check visit https://docs.datadoghq.com/guides/agent_checks/#overview
@@ -100,4 +103,20 @@ Here, I have written an agent check for the matric ```test.support.random``` and
 # Level 2 - Visualizing your Data
 
 * I have created one dashboard by cloning the Mysql database and added the ``test.suppport.random`` matric along with some othrer mysql matrics.
+ ![Tagging Screenshot](/images/dashboard.png)
+ * Difference between a timeboard and a screenboard?
+ * Snapshot of ```test.support.random``` matric graph and that shows it going above 0.90
+ ![Tagging Screenshot](/images/matricvalue_0.94.png)
 
+# Level 3 - Alerting on your Data
+
+* Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes
+![Tagging Screenshot](/images/alertcondition.png)
+* Bonus points: Multi-alert monitor
+![Tagging Screenshot](/images/multialert.png)
+
+* Monitor alert obtained via mail 
+![Tagging Screenshot](/images/alert.png)
+
+* Bonus: Downtime for monitor alert
+![Tagging Screenshot](/images/downtime.png)
