@@ -79,12 +79,12 @@ sudo /etc/init.d/datadog-agent info -v
 
 ### Tagging 
 
-  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tagg either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
-  Open the datadog.conf file ``sh  sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``sh tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
+  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on https://docs.datadoghq.com/guides/tagging/ for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
+  Open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
   ###### This is my Screenshot
   
-
+![alt tag](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/Tag.png)
 
 
 
