@@ -87,7 +87,7 @@ sudo /etc/init.d/datadog-agent info -v
   ###### This is my Screenshot after tagging 
  
 
-![Tagging Screenshot](/images/Tag.png)
+![Tagging Screenshot](/images/tag.png)
 
 
 ### Mysql Integration
