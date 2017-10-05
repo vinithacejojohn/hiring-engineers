@@ -2,15 +2,15 @@
 ### Contents
 * Introduction
 * Questions
-* **Level 0 (optional) - Setup an Ubuntu VM**
-* **Level 1 - Collecting your Data**  
+* [Level 0 (optional) - Setup an Ubuntu VM](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
+* [Level 1 - Collecting your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
     * What is an agent
     * Tagging in agent config 
     * Mysql Integration 
     * Agent Check
-* **Level 2 - Visualizing your Data** 
+* [Level 2 - Visualizing your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-2---visualizing-your-data)
     
-* **Level 3 - Alerting on your Data**
+* Level 3 - Alerting on your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-3---alerting-on-your-data)
 
 
 ## Introduction
@@ -21,6 +21,8 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
 
 # Level 0 (optional) - Setup an Ubuntu VM
    * For this I have launched one ubuntu VM in AWS. 
+   
+# Level 1 - Collecting your Data
    
 ### Bonus question: What is an agent
   * In order to use datadog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
