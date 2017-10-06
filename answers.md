@@ -134,27 +134,27 @@ instances:
 
 ## Level 3 - Alerting on your Data
 
-* Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes
+* **_Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes_**
 
 ![Tagging Screenshot](/images/alertcondition.png)
 
 
-* Bonus: Multi-alert monitor
+* **_Bonus: Multi-alert monitor_**
 
 ![Tagging Screenshot](/images/multialert.png)
 
 
-* Monitor alert obtained via mail
+* **_Monitor alert obtained via mail_**
 
 ![Tagging Screenshot](/images/alert.png)
 
 
-* Bonus: Downtime for monitor alert set up
+* **_Bonus: Downtime for monitor alert set up_**
 
 ![Tagging Screenshot](/images/downtime.png)
 
 
-* Mail notification after Downtime has started
+* **_Mail notification after Downtime has started_**
 
 ![Tagging Screenshot](/images/downtimemail.png)
 
