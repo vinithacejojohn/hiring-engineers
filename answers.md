@@ -124,27 +124,37 @@ instances:
  ![Tagging Screenshot](/images/dashboard.png)
  * Difference between a timeboard and a screenboard?
    * There are two type of dashboards in DataDog, Timeboard and Screenboard.
-    * Timeboard : All graphs are scoped at the same time and graphs will always be in the grid-like fashion. We are able to share the graphs individualy and its better for troubleshooting and correlation.
-    * Screenboard : They are created with drag-and-drop widgets, which can each have a different time frame. These are flexible, far more customizable and are great for getting a high-level look into a system. ScreenBoards can be shared as a whole live and as a read-only entity, whereas TimeBoards cannot.
+    * **Timeboard:** All graphs are scoped at the same time and graphs will always be in the grid-like fashion. We are able to share the graphs individualy and its better for troubleshooting and correlation.
+    * **Screenboard:** They are created with drag-and-drop widgets, which can each have a different time frame. These are flexible, far more customizable and are great for getting a high-level look into a system. ScreenBoards can be shared as a whole live and as a read-only entity, whereas TimeBoards cannot.
 
  * Snapshot of ```test.support.random``` metric graph that shows it going above 0.90
  ![Tagging Screenshot](/images/matricvalue_0.94.png)
 
+
+
 ## Level 3 - Alerting on your Data
 
 * Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes
+
 ![Tagging Screenshot](/images/alertcondition.png)
 
+
 * Bonus: Multi-alert monitor
+
 ![Tagging Screenshot](/images/multialert.png)
 
-* Monitor alert obtained via mail 
+
+* Monitor alert obtained via mail
+
 ![Tagging Screenshot](/images/alert.png)
+
 
 * Bonus: Downtime for monitor alert set up
 
 ![Tagging Screenshot](/images/downtime.png)
 
+
 * Mail notification after Downtime has started
+
 ![Tagging Screenshot](/images/downtimemail.png)
 
