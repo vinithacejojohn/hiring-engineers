@@ -6,8 +6,8 @@
 * [Level 1 - Collecting your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-1---collecting-your-data)
     * What is an agent
     * Tagging in agent config 
-    * Mysql Integration 
-    * Agent Check
+    * [Mysql Integration](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#mysql-integration)
+    * [Agent Check](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#agent-check)
 * [Level 2 - Visualizing your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-2---visualizing-your-data)
     
 * [Level 3 - Alerting on your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-3---alerting-on-your-data)
@@ -24,7 +24,7 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
    
 ## Level 1 - Collecting your Data
    
-### Bonus question: What is an agent
+### What is an agent
   * In order to use datadog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
   
  * Main parts of the agents are the collector, dogstatsd, and the forwarder.
@@ -80,7 +80,7 @@ sudo /etc/init.d/datadog-agent info -v
 /var/log/datadog/forwarder.log
 ```
 
-### Tagging 
+### Tagging in agent config 
 
   * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on [DataDog Tags](https://docs.datadoghq.com/guides/tagging/) for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
   * Tags are actually a key: Value pair. In order to tag open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
