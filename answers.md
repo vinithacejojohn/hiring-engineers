@@ -1,5 +1,5 @@
 # DataDog Challenge
-### Contents
+## Contents
 * [Introduction](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#introduction)
 * [Questions](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#questions)
 * [Level 0 (optional) - Setup an Ubuntu VM](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
@@ -33,7 +33,7 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
   
      
 ##### Installation of an agent
-   * First of all we have to take an account with the DataDog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( YOUR_API_KEY will be replaced by our secret API Key )
+   * First of all we have to take an account with the DataDog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( *YOUR_API_KEY* will be replaced by our secret API Key )
    ```
    DD_API_KEY=[YOUR_API_KEY] bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
    ```
@@ -45,30 +45,30 @@ sudo /etc/init.d/datadog-agent stop
 
 sudo /etc/init.d/datadog-agent restart
 ````
-###### Status and Information
+##### Status and Information
 
 To check if the Agent is running: (since 3.8.0)
-````sh
+````
 sudo /etc/init.d/datadog-agent status
 ````
 To receive information about the Agent’s state:
-```sh
+```
 sudo /etc/init.d/datadog-agent info
 ```
 Tracebacks for errors can be retrieved by setting the -v flag: (since 3.8.0)
-````sh
+````
 sudo /etc/init.d/datadog-agent info -v
 ````
 
-###### Configuration Files
+##### Configuration Files
 
-* All the configuration file for the agent is loacted at ````sh /etc/dd-agent/datadog.conf ```` and Configuration files for integrations are located in  `sh /etc/dd-agent/conf.d/`
+* All the configuration files for the agent are located at ```` /etc/dd-agent/datadog.conf ```` and Configuration files for integrations are located in  `/etc/dd-agent/conf.d/`
 
-###### Troubleshooting
+##### Troubleshooting
 
-* Try running the info command to see the state of the Agent.Logs for the subsystems are in the following files:
+* Try running the info command to see the state of the Agent. Logs for the subsystems are in the following files:
 
-```sh 
+``` 
 /var/log/datadog/supervisord.log (since 3.8.0)
 /var/log/datadog/collector.log
 /var/log/datadog/dogstatsd.log
@@ -77,8 +77,8 @@ sudo /etc/init.d/datadog-agent info -v
 
 ### Tagging in agent config 
 
-  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on [DataDog Tags](https://docs.datadoghq.com/guides/tagging/) for more tagging informations. We can put tag either via configuration file or from the datadog interface. Here I am going to show to how to tag using the configuration file.
-  * Tags are actually a key: Value pair. In order to tag open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
+  * Tags can be used to add extra dimensions to the metics so that we can aggregate, compare and render data across different hosts on the front end. You can have a look on [DataDog Tags](https://docs.datadoghq.com/guides/tagging/) for more  information on Tagging. We can put tag either via configuration file or from the datadog interface. Here I am going to show  how to tag using the configuration file.
+  * Tags are actually a key: Value pair. In order to tag, open the datadog.conf file ``sudo vim /etc/dd-agent/datadog.conf `` and insert the line ``tags:DatadogCandidate Name:Vinitha `` on the tagging section. This will add a tag to your host.
   
   ###### This is my Screenshot after tagging 
  
