@@ -25,29 +25,24 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
 ## Level 1 - Collecting your Data
    
 ### What is an agent
-  * In order to use datadog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
+  * In order to use DataDog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting data to DataDog so that we are able to monitor and analyse our data.
   
  * Main parts of the agents are the collector, dogstatsd, and the forwarder.
 
-* ```` collector```` runs checks on the current machine for whatever integrations you have and it will capture system metrics like memory and CPU.```` Dogstatsd````is a statsd backend server you can send custom metrics to from an application.```` forwarder````retrieves data from both dogstatsd and the collector and then queues it up to be sent to Datadog.
+* ```` collector```` runs checks on the current machine for whatever integrations you have and it will capture system metrics like memory and CPU.```` Dogstatsd````is a statsd backend server you can send custom metrics to, from an application.```` forwarder````retrieves data from both dogstatsd and the collector and then queues it up to be sent to DataDog.
   
      
 ##### Installation of an agent
-   * First of all we have to take an account with the datadog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( YOUR_API_KEY will be replaced by our secret API Key )
+   * First of all we have to take an account with the DataDog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( YOUR_API_KEY will be replaced by our secret API Key )
    ```
    DD_API_KEY=[YOUR_API_KEY] bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
    ```
 ##### Basic commands for agent usage
-  Starting an agent
-````sh
+````
 sudo /etc/init.d/datadog-agent start
-````
-Stopping an agent
-````sh
-sudo /etc/init.d/datadog-agent stot
-````
-Restarting an agent
-````sh
+
+sudo /etc/init.d/datadog-agent stop
+
 sudo /etc/init.d/datadog-agent restart
 ````
 ###### Status and Information
