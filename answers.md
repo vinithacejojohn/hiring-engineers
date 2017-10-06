@@ -4,8 +4,8 @@
 * [Questions](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#questions)
 * [Level 0 (optional) - Setup an Ubuntu VM](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
 * [Level 1 - Collecting your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-1---collecting-your-data)
-    * What is an agent
-    * Tagging in agent config 
+    * [What is an agent](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#what-is-an-agent)
+    * [Tagging in agent config](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#tagging-in-agent-config)
     * [Mysql Integration](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#mysql-integration)
     * [Agent Check](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#agent-check)
 * [Level 2 - Visualizing your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-2---visualizing-your-data)
