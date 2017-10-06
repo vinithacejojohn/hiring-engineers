@@ -1,16 +1,16 @@
 # DataDog Challenge
 ### Contents
-* Introduction
-* Questions
+* [Introduction](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#introduction)
+* [Questions](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#questions)
 * [Level 0 (optional) - Setup an Ubuntu VM](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
-* [Level 1 - Collecting your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-0-optional---setup-an-ubuntu-vm)
+* [Level 1 - Collecting your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-1---collecting-your-data)
     * What is an agent
     * Tagging in agent config 
     * Mysql Integration 
     * Agent Check
 * [Level 2 - Visualizing your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-2---visualizing-your-data)
     
-* Level 3 - Alerting on your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-3---alerting-on-your-data)
+* [Level 3 - Alerting on your Data](https://github.com/vinithacejojohn/hiring-engineers/blob/dev/answers.md#level-3---alerting-on-your-data)
 
 
 ## Introduction
@@ -19,10 +19,10 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
 ## Questions
 * This documentation contains the solutions to the DataDog challenge questions for [Support Engineer](https://github.com/DataDog/hiring-engineers/tree/support-engineer#the-challenge)
 
-# Level 0 (optional) - Setup an Ubuntu VM
+## Level 0 (optional) - Setup an Ubuntu VM
    * For this I have launched one ubuntu VM in AWS. 
    
-# Level 1 - Collecting your Data
+## Level 1 - Collecting your Data
    
 ### Bonus question: What is an agent
   * In order to use datadog, we have to install an agent in our host. It is a piece of software that is capable of collecting  and presenting datas to datadog so that we are able to monitor and analyse our data.
@@ -32,12 +32,12 @@ Datadog is a monitoring and analysing tool that can be used for collectig and ga
 * ```` collector```` runs checks on the current machine for whatever integrations you have and it will capture system metrics like memory and CPU.```` Dogstatsd````is a statsd backend server you can send custom metrics to from an application.```` forwarder````retrieves data from both dogstatsd and the collector and then queues it up to be sent to Datadog.
   
      
-###### Installation of an agent
+##### Installation of an agent
    * First of all we have to take an account with the datadog. You will get an API key with which you will be able to install the agent. After creating the account we'll have to select the type of OS we use, here I selected Ubuntu. On the next page we'll get the command for the installation along with the secret API Key. The command for ubuntu is given below ( YOUR_API_KEY will be replaced by our secret API Key )
    ```
    DD_API_KEY=[YOUR_API_KEY] bash -c "$(curl -L https://raw.githubusercontent.com/DataDog/dd-agent/master/packaging/datadog-agent/source/install_agent.sh)"
    ```
-###### Basic commands for agent usage
+##### Basic commands for agent usage
   Starting an agent
 ````sh
 sudo /etc/init.d/datadog-agent start
@@ -124,7 +124,7 @@ Here, I have written an agent check for the matric ```test.support.random``` and
 
 
 
-# Level 2 - Visualizing your Data
+## Level 2 - Visualizing your Data
 
 * I have created one dashboard by cloning the Mysql database and added the ``test.suppport.random`` matric along with some othrer mysql matrics.
  ![Tagging Screenshot](/images/dashboard.png)
@@ -136,7 +136,7 @@ Here, I have written an agent check for the matric ```test.support.random``` and
  * Snapshot of ```test.support.random``` matric graph and that shows it going above 0.90
  ![Tagging Screenshot](/images/matricvalue_0.94.png)
 
-# Level 3 - Alerting on your Data
+## Level 3 - Alerting on your Data
 
 * Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes
 ![Tagging Screenshot](/images/alertcondition.png)
