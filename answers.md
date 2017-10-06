@@ -118,6 +118,7 @@ instances:
 
 
 
+
 ## Level 2 - Visualizing your Data
 
 * I have created one dashboard by cloning the Mysql database and added the ``test.suppport.random`` metric along with some other mysql metrics.
@@ -132,6 +133,11 @@ instances:
 
 
 
+
+
+
+
+
 ## Level 3 - Alerting on your Data
 
 * **_Set up a monitor on this metric that alerts you when it goes above 0.90 at least once during the last 5 minutes_**
@@ -139,9 +145,13 @@ instances:
 ![Tagging Screenshot](/images/alertcondition.png)
 
 
+
+
 * **_Bonus: Multi-alert monitor_**
 
 ![Tagging Screenshot](/images/multialert.png)
+
+
 
 
 * **_Monitor alert obtained via mail_**
@@ -149,12 +159,15 @@ instances:
 ![Tagging Screenshot](/images/alert.png)
 
 
+
+
 * **_Bonus: Downtime for monitor alert set up_**
 
 ![Tagging Screenshot](/images/downtime.png)
 
 
+
+
 * **_Mail notification after Downtime has started_**
 
 ![Tagging Screenshot](/images/downtimemail.png)
-
